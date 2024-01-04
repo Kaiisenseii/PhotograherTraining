@@ -24,7 +24,7 @@ class Photographer:
         self.email = email if self.validate_email(email) else "Unvalidated Email"
             
         self.company = company
-        self.date = date
+        self.date = date if self.validate_date(date) else "Unvalida Date"
         
           
     def photo_desc(self):
@@ -65,7 +65,8 @@ Email ID : {self.email}
         #     else: return False
         # return False
     
-    
+    def validate_date(self, _date):
+        return True if isinstance(_date, str) else False
         
     def validate_photos(self, _photos):
         status = False
