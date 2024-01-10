@@ -1,7 +1,7 @@
 '''
 This is Login utilities which helps to verify user before login
 '''
-from file_io import file_reader, file_list_writer
+from .file_io import file_reader, file_list_writer
 
 
 def login(username,password):

@@ -1,9 +1,9 @@
 '''
 register new user
 '''
-from file_io import file_appender
-from Models.user import get_last_id
 
+from Models.user import get_last_id
+from .file_io import file_appender
 
 def register(username, password, email):
     '''

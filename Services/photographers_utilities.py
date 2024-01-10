@@ -2,8 +2,9 @@
 it is photographers utilities which helps to view, add, delete, update photographers
 '''
 from tabulate import tabulate
-from file_io import file_reader, file_appender, file_list_writer
 from Models.photographers import get_last_id
+from .file_io import file_reader, file_appender, file_list_writer
+
 
 def gell_all_photographers():
     '''
@@ -56,11 +57,13 @@ def update_photographer():
     for photographer in photographers:
         if str(photographer.split(',')[0]) == str(photographer_id):
             photographers.remove(photographer)
-            name=input(f"Enter the new name for {photographer.split(',')[1]} : ")
-            price=input(f"Enter the new price for {photographer.split(',')[2]} : ")
-            equipment=input(f"Enter the new category for {photographer.split(',')[3]} : ")
-            photographers.append(f"{photographer_id}, {name},{price},{equipment}")
-    file_list_writer("data/products.csv",photographers)
+            name = input(f"Enter the new name for {photographer.split(',')[1]} : ")
+            price = input(f"Enter the new price for {photographer.split(',')[2]} : ")
+            equipment = input(f"Enter the new category for {photographer.split(',')[3]} : ")
+            photographers.append(f"{photographer_id}, {name},{price},{equipment}\n")
+            print(photographers)
+    
+    file_list_writer("data/photographers.csv",photographers)
     print("************************************")
     print("Photographers Updated Successfully")
     print("************************************")

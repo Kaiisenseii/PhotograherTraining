@@ -92,10 +92,13 @@ def photographer_menu():
     #     photographer_menu()
     if choice == 1:
         add_new_photographers()
+        photographer_menu()
     elif choice == 2:
         delete_existing_photographers()
+        photographer_menu()
     elif choice == 3:
         update_photographer()
+        photographer_menu()
     elif choice == 4:
         photo_menu()
     else: 
